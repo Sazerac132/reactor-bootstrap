@@ -4,7 +4,7 @@ const gutil = require('gutil');
 
 gulp.task('clean', function(cb) {
 
-  del(['dist']).then(function(cleared) {
+  del(['dist', 'bin']).then(function(cleared) {
     gutil.log('[clean] Deleted', '\n - ' + cleared.join('\n - '));
     cb();
   });

@@ -4,7 +4,7 @@ const webpackConfig = {
   entry: './src/js/main.js',
   output: {
     filename: 'app.js',
-    path: path.resolve(__dirname, 'dist/js')
+    path: path.resolve(__dirname, 'bin')
   },
   devtool: 'sourcemap',
   module: {

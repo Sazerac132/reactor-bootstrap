@@ -1,0 +1,22 @@
+{
+  "name": "reactor-bootstrap",
+  "version": "1.0.0",
+  "description": "A framework using react.js to quickly get up and running for front-end projects.",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sazerac132/reactor-bootstrap.git"
+  },
+  "author": "Thomas McDevitt",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sazerac132/reactor-bootstrap/issues"
+  },
+  "homepage": "https://github.com/Sazerac132/reactor-bootstrap#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
+}

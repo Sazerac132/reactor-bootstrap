@@ -4,10 +4,12 @@ const runSequence = require('run-sequence');
 
 requireDir('gulpTasks');
 
+gulp.task('default', ['build']);
+
 gulp.task('build', function() {
-  return runSequence(['webpack'])
+  return runSequence(['clean', 'webpack']);
 });
 
 gulp.task('dev', function() {
-  return runSequence(['clean', 'webpack'])
+  return runSequence(['webpack-dev'])
 });

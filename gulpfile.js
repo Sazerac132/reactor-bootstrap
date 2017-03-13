@@ -6,8 +6,8 @@ requireDir('gulpTasks');
 
 gulp.task('default', ['build']);
 
-gulp.task('build', function() {
-  return runSequence(['clean', 'webpack']);
+gulp.task('build', ['reset'], function() {
+  return runSequence('webpack', 'useref', 'set-revisions', ['minify:js', 'minify:css'], 'clean');
 });
 
 gulp.task('dev', function() {

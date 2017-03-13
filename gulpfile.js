@@ -7,7 +7,7 @@ requireDir('gulpTasks');
 gulp.task('default', ['build']);
 
 gulp.task('build', function() {
-  return runSequence(['clean', 'webpack']);
+  return runSequence(['clean', 'webpack', 'useref']);
 });
 
 gulp.task('dev', function() {

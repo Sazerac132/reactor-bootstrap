@@ -6,3 +6,6 @@ dist/
 
 # Compiled
 bin/
+
+# Logs
+npm-debug.log

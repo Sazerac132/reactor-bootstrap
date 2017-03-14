@@ -29,6 +29,14 @@ const webpackConfig = {
             'sass-loader'
           ]
         })
+      },
+      {
+        test: /\.(jpg|png|gif|svg)$/,
+        loader: 'file-loader',
+        options: {
+          name: 'images/[hash].[ext]',
+          limit: 25000
+        }
       }
     ]
   },

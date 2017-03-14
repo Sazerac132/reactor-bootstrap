@@ -2,7 +2,7 @@ const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const webpackConfig = {
-  entry: './src/js/main.js',
+  entry: './src/main.js',
   output: {
     filename: 'app.js',
     path: path.resolve(__dirname, 'bin')
@@ -23,7 +23,7 @@ const webpackConfig = {
         exclude: /node_modules/,
         loader: ExtractTextPlugin.extract({
           fallback: 'style-loader',
-          use: ['css-loader', 'sass-loader']
+          use: ['css-loader?modules&importLoaders=1', 'postcss-loader?sourceMap=inline', 'sass-loader']
         })
       }
     ]

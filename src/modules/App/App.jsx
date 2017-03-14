@@ -1,7 +1,7 @@
 import React from 'react';
-import Image from '../Components/Image.jsx';
+import Image from '../../Components/Image.jsx';
 
-import JokerImage from './joker.jpg';
+import JokerImage from '../joker.jpg';
 
 const styles = require('./app.scss');
 

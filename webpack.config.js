@@ -9,7 +9,7 @@ const webpackConfig = {
   },
   devtool: 'sourcemap',
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
@@ -21,7 +21,10 @@ const webpackConfig = {
       {
         test: /\.s?css$/,
         exclude: /node_modules/,
-        loader: ExtractTextPlugin.extract('css-loader!sass-loader')
+        loader: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: ['css-loader', 'sass-loader']
+        })
       }
     ]
   },

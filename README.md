@@ -23,10 +23,7 @@ A framework using react.js to quickly get up and running for front-end projects 
   - [Autoprefixer](https://github.com/postcss/autoprefixer) - adds required vendor prefixes to CSS rules based on values from [Can I Use](http://caniuse.com/).
   - [React CSS Modules](https://github.com/gajus/react-css-modules) - automatic scoping of CSS selectors by file.
   - Further plugins can be added to [postcss.config.js](./postcssconfig.js) as desired.
-
-## Still required
-- [Font Awesome](http://fontawesome.io/)
-- Image/font transferring build tasks
+- [Font Awesome](http://fontawesome.io/) for some slightly more abstract typography requirements.
 
 ## License
 ISC (c) 2017 Thomas McDevitt

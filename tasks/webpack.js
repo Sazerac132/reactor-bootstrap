@@ -3,7 +3,7 @@ const webpack = require('webpack');
 const WebpackDevServer = require('webpack-dev-server');
 const gutil = require('gutil');
 
-gulp.task('webpack', function(cb) {
+gulp.task('webpack', ['images-build'], function(cb) {
   let config = require('../webpack.config');
 
   webpack(config, function(err, stats) {
@@ -16,7 +16,7 @@ gulp.task('webpack', function(cb) {
   });
 });
 
-gulp.task('webpack-dev', function() {
+gulp.task('webpack-dev', ['images-dev'], function() {
   let config = require('../webpack.config');
   let compiler = webpack(config);
 

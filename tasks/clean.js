@@ -17,3 +17,10 @@ gulp.task('clean', function(cb) {
       cb();
     });
 });
+
+gulp.task('clean:image-context', function(cb) {
+  del(['src/Components/Image/imageContext.js'])
+    .then(function() {
+      cb();
+    });
+});

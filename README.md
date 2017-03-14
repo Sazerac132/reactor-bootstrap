@@ -17,11 +17,11 @@ A framework using react.js to quickly get up and running for front-end projects 
 - `npm start` or `gulp dev` - starts webpack's dev server at localhost:8080.
  
 ## Technologies leveraged
-- [React](https://facebook.github.io/react/).
-- [webpack](https://webpack.github.io/) and [webpack dev server](https://webpack.github.io/docs/webpack-dev-server.html)
+- [React](https://facebook.github.io/react/) - a JavaScript framework..
+- [webpack](https://webpack.github.io/) and [webpack dev server](https://webpack.github.io/docs/webpack-dev-server.html).
 - [PostCSS](http://postcss.org/), a CSS postprocessor.
   - [Autoprefixer](https://github.com/postcss/autoprefixer) - adds required vendor prefixes to CSS rules based on values from [Can I Use](http://caniuse.com/).
-  - [React CSS Modules](https://github.com/gajus/react-css-modules) - automatic
+  - [React CSS Modules](https://github.com/gajus/react-css-modules) - automatic scoping of CSS selectors by file.
   - Further plugins can be added to [postcss.config.js](./postcssconfig.js) as desired.
 
 ## Still required

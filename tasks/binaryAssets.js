@@ -1,6 +1,7 @@
 const gulp = require('gulp');
 const watch = require('gulp-watch');
 const replace = require('gulp-replace');
+const fs = require('fs');
 
 gulp.task('move-binary-assets', ['font-awesome', 'copy-images']);
 
@@ -14,17 +15,13 @@ gulp.task('copy-images', function() {
     .pipe(gulp.dest('dist/images'));
 });
 
-const componentsPath = 'src/Components';
-const imageModule = `${componentsPath}/Image.jsx`;
 
-gulp.task('images-dev', function() {
-  gulp.src(imageModule)
-    .pipe(replace(/context = ''/, 'context = \'bin\/\''))
-    .pipe(gulp.dest(componentsPath));
+const imageModule = 'src/Components/Image/imageContext.js';
+
+gulp.task('images-dev', ['clean:image-context'], function() {
+  fs.writeFileSync(imageModule, 'export default \'dev\';');
 });
 
-gulp.task('images-build', function() {
-  gulp.src(imageModule)
-    .pipe(replace(/context = 'bin\/'/, 'context = \'\''))
-    .pipe(gulp.dest(componentsPath));
+gulp.task('images-build', ['clean:image-context'], function() {
+  fs.writeFileSync(imageModule, 'export default \'build\';');
 });

@@ -3,7 +3,9 @@ const webpack = require('webpack');
 const WebpackDevServer = require('webpack-dev-server');
 const gutil = require('gutil');
 
-gulp.task('webpack', ['images-build'], function(cb) {
+gulp.task('webpack', function(cb) {
+  process.env.NODE_ENV = 'production';
+
   let config = require('../webpack.config');
 
   webpack(config, function(err, stats) {
@@ -16,15 +18,14 @@ gulp.task('webpack', ['images-build'], function(cb) {
   });
 });
 
-gulp.task('webpack-dev', ['images-dev'], function() {
+gulp.task('webpack-dev', function() {
+  process.env.NODE_ENV = 'development';
+
   let config = require('../webpack.config');
   let compiler = webpack(config);
 
   let options = {
     publicPath: '/bin/',
-    stats: {
-      colors: true
-    },
     quiet: true
   };
   let protocol = 'http', host = 'localhost', port = 8080;

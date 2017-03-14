@@ -23,7 +23,11 @@ const webpackConfig = {
         exclude: /node_modules/,
         loader: ExtractTextPlugin.extract({
           fallback: 'style-loader',
-          use: ['css-loader?modules&importLoaders=1', 'postcss-loader?sourceMap=inline', 'sass-loader']
+          use: [
+            'css-loader?modules&sourceMap=true&importLoaders=1',
+            'postcss-loader?sourceMap=inline',
+            'sass-loader'
+          ]
         })
       }
     ]

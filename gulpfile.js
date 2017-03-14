@@ -7,7 +7,7 @@ requireDir('tasks');
 gulp.task('default', ['build']);
 
 gulp.task('build', ['reset'], function() {
-  return runSequence('webpack', 'useref', 'set-revisions', ['minify:js', 'minify:css'], 'clean');
+  return runSequence('webpack', ['useref', 'move-binary-assets'], 'set-revisions', ['minify:js', 'minify:css'], 'clean');
 });
 
 gulp.task('dev', function() {

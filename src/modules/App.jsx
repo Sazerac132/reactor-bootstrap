@@ -1,5 +1,5 @@
 import React from 'react';
-import Image from '../Components/Image/Image.jsx';
+import Image from '../Components/Image.jsx';
 
 import JokerImage from './joker.jpg';
 

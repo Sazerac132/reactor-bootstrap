@@ -7,8 +7,5 @@ dist/
 # Compiled
 bin/
 
-# Environment
-src/Components/Image/imageContext.js
-
 # Logs
 npm-debug.log

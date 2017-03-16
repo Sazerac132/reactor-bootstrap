@@ -1,5 +1,4 @@
 import React from 'react';
-import Image from '../../Components/Image.jsx';
 
 import JokerImage from '../joker.jpg';
 
@@ -10,7 +9,7 @@ export default class App extends React.Component {
     return (
       <div className={styles.root}>
         <h1>insert title here</h1>
-        <Image src={JokerImage} className={styles['joker-image']} />
+        <img src={JokerImage} className={styles['joker-image']} />
       </div>
     );
   }

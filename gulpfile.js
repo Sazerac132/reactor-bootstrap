@@ -10,6 +10,10 @@ gulp.task('build', ['reset'], function() {
   return runSequence('webpack', ['useref', 'move-binary-assets'], 'set-revisions', ['minify:js', 'minify:css'], 'clean');
 });
 
-gulp.task('dev', function() {
+gulp.task('dev', ['clean'], function() {
   return runSequence(['webpack-dev'])
+});
+
+gulp.task('quick-build', function() {
+  return runSequence('reset', 'webpack');
 });

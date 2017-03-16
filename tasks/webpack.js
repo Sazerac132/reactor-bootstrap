@@ -25,7 +25,6 @@ gulp.task('webpack-dev', function() {
   let compiler = webpack(config);
 
   let options = {
-    publicPath: '/bin/',
     quiet: true
   };
   let protocol = 'http', host = 'localhost', port = 8080;

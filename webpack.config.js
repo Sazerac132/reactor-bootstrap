@@ -13,6 +13,13 @@ const webpackConfig = {
   module: {
     rules: [
       {
+        test: /index\.html/,
+        loader: 'file-loader',
+        options: {
+          name: '[name].[ext]'
+        }
+      },
+      {
         test: /\.jsx?$/,
         exclude: /node_modules/,
         loader: 'babel-loader',

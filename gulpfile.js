@@ -13,3 +13,7 @@ gulp.task('build', ['reset'], function() {
 gulp.task('dev', function() {
   return runSequence(['webpack-dev'])
 });
+
+gulp.task('quick-build', function() {
+  return runSequence('reset', 'webpack');
+});

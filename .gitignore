@@ -7,5 +7,6 @@ dist/
 # Compiled
 bin/
 
-# Logs
+# Other
+.idea/
 npm-debug.log

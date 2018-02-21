@@ -1,3 +1,5 @@
+'use strict';
+
 const gulp = require('gulp');
 const rev = require('gulp-rev');
 const revReplace = require('gulp-rev-replace');

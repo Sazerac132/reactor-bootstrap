@@ -1,29 +1,24 @@
-# reactor-bootstrap
-A framework using react.js to quickly get up and running for front-end projects using [React](https://facebook.github.io/react/).
+# To-do list - a React Demonstration
 
 ## Prerequisites
 - [node.js](https://nodejs.org/en/) and [npm](https://www.npmjs.com/). Installing node.js from the link on the left will install both of these.
 - [gulp.js](http://gulpjs.com/) doesn't need to be installed globally but can make some things easier: `npm install -g gulp`
 
-## Creating a new project
-- Fork this repository with the button to the top-right.
-- Give the project an awesome name.
-- CD into the directory: `cd awesome-name`
+## How to get going
+- Clone the repo locally.
 - Install dependencies: `npm install`
-- That's pretty much it. You're good to go!
+- To start a local server with webpack, use `npm run start`
+- By default it runs on port 3001 but this can be changed as desired in `package.json`.
 
-## Commands
-- `npm run build` or `gulp build` - triggers the build task; versions assets will be put in `dist/`.
-- `npm start` or `gulp dev` - starts webpack's dev server at localhost:8080.
+## It can...
+- Look pretty
+- Show the bare structure of a very rudimentary to-do list
+- Do nothing else
  
-## Technologies leveraged
-- [React](https://facebook.github.io/react/) - a JavaScript framework..
-- [webpack](https://webpack.github.io/) and [webpack dev server](https://webpack.github.io/docs/webpack-dev-server.html).
-- [PostCSS](http://postcss.org/), a CSS postprocessor.
-  - [Autoprefixer](https://github.com/postcss/autoprefixer) - adds required vendor prefixes to CSS rules based on values from [Can I Use](http://caniuse.com/).
-  - [React CSS Modules](https://github.com/gajus/react-css-modules) - automatic scoping of CSS selectors by file.
-  - Further plugins can be added to [postcss.config.js](./postcssconfig.js) as desired.
-- [Font Awesome](http://fontawesome.io/) for some slightly more abstract typography requirements.
+## Tasks
+- Toggle task (demo)
+- Remove task
+- Add new task, includes adding a new component
 
 ## License
 ISC (c) 2017 Thomas McDevitt

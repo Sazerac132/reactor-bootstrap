@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 import JokerImage from '../joker.jpg';
+import styles from './app.scss';
 
-const styles = require('./app.scss');
-
-export default class App extends React.Component {
+export default class App extends Component {
   render() {
+    console.log(x);
+    console.log(styles);
     return (
       <div className={styles.root}>
         <h1>insert title here</h1>

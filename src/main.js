@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './modules/App/App.jsx';
+import App from './modules/App/App.js';
 
 require('./index.html');
 require('./base.scss');

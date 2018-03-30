@@ -14,8 +14,6 @@ gulp.task('set-revisions', ['revision'], function() {
   let manifest = gulp.src('dist/rev-manifest.json');
 
   return gulp.src('dist/index.html')
-    .pipe(revReplace({
-      manifest: manifest
-    }))
+    .pipe(revReplace({manifest}))
     .pipe(gulp.dest('dist'));
 });

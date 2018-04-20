@@ -27,7 +27,7 @@ gulp.task('webpack-dev', function() {
   let compiler = webpack(config);
 
   let options = {
-    quiet: true
+    quiet: false
   };
 
   let protocol = 'http', host = 'localhost', port = process.env['npm_package_config_port'] || 3001;

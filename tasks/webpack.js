@@ -27,7 +27,9 @@ gulp.task('webpack-dev', function() {
   let options = {
     quiet: true
   };
-  let protocol = 'http', host = 'localhost', port = 8080;
+  let protocol = 'http';
+  let host = 'localhost';
+  let port = process.env.npm_package_config_port || 3001;
 
   let server = new WebpackDevServer(compiler, options)
     .listen(port, host, function(err) {

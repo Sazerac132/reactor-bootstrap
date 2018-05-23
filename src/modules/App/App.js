@@ -5,8 +5,6 @@ import styles from './app.scss';
 
 export default class App extends Component {
   render() {
-    console.log(x);
-    console.log(styles);
     return (
       <div className={styles.root}>
         <h1>insert title here</h1>

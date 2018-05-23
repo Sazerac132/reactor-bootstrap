@@ -7,6 +7,9 @@
     "build": "./node_modules/gulp/bin/gulp.js build",
     "start": "./node_modules/gulp/bin/gulp.js dev"
   },
+  "config": {
+    "port": "3001"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Sazerac132/reactor-bootstrap.git"

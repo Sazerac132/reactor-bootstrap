@@ -51,9 +51,11 @@
   },
   "dependencies": {
     "font-awesome": "4.7.0",
-    "lodash": "4.17.5",
-    "moment": "2.21.0",
-    "react": "15.6.2",
-    "react-dom": "15.6.2"
+    "lodash": "4.17.11",
+    "moment": "2.22.2",
+    "react": "16.6.3",
+    "react-dom": "16.6.3",
+    "react-redux": "5.1.1",
+    "redux": "4.0.1"
   }
 }

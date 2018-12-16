@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
 import styles from './style.scss';
-import tasks from '../../reducers/tasks';
 
 export default class JokerList extends Component {
   constructor(props) {
@@ -17,7 +16,7 @@ export default class JokerList extends Component {
 
   render() {
     const { addTask } = this;
-    const { tasks, removeTask } = this.props;
+    const { tasks = [], removeTask } = this.props;
     const { newTaskName } = this.state;
 
     return (

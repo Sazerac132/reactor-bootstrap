@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div>
+  <input
+    className="input"
+    onChange={[Function]}
+    value="Plot evil deeds"
+  />
+  <button
+    onClick={[Function]}
+  >
+    New task
+  </button>
+  <ul>
+    <li>
+      No tasks.
+    </li>
+  </ul>
+</div>
+`;

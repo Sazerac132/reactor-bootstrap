@@ -1,7 +1,6 @@
 const postcssConfig = {
   plugins: [
-    require('autoprefixer'),
-    require('react-css-modules')
+    require('autoprefixer')
   ]
 };
 

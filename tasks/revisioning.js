@@ -1,19 +1,19 @@
-const gulp = require('gulp');
+const { task, series, src, dest } = require('gulp');
 const rev = require('gulp-rev');
 const revReplace = require('gulp-rev-replace');
 
-gulp.task('revision', function() {
-  return gulp.src(['dist/**/app.js', 'dist/**/*.css'])
+task('revision', () => {
+  return src(['dist/**/app.js', 'dist/**/*.css'])
     .pipe(rev())
-    .pipe(gulp.dest('dist'))
+    .pipe(dest('dist'))
     .pipe(rev.manifest())
-    .pipe(gulp.dest('dist'));
+    .pipe(dest('dist'));
 });
 
-gulp.task('set-revisions', ['revision'], function() {
-  let manifest = gulp.src('dist/rev-manifest.json');
+task('set-revisions', series('revision', () => {
+  const manifest = src('dist/rev-manifest.json');
 
-  return gulp.src('dist/index.html')
+  return src('dist/index.html')
     .pipe(revReplace({manifest}))
-    .pipe(gulp.dest('dist'));
-});
+    .pipe(dest('dist'));
+}));

@@ -1,16 +1,15 @@
-const gulp = require('gulp');
+const { task, src, dest } = require('gulp');
 const uglify = require('gulp-uglify');
 const minify = require('gulp-clean-css');
 
-gulp.task('minify:js', function() {
-  return gulp.src('dist/**/*.js')
+task('minify:js', () => {
+  return src('dist/**/*.js')
     .pipe(uglify())
-    .pipe(gulp.dest('dist'));
+    .pipe(dest('dist'));
 });
 
-gulp.task('minify:css', function() {
-  return gulp.src('dist/**/*.css')
+task('minify:css', () => {
+  return src('dist/**/*.css')
     .pipe(minify())
-    .pipe(gulp.dest('dist'));
+    .pipe(dest('dist'));
 });
-

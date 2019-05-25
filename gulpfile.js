@@ -1,19 +1,20 @@
-const gulp = require('gulp');
+const { task, series, parallel } = require('gulp');
+
 const requireDir = require('require-dir');
-const runSequence = require('run-sequence');
 
 requireDir('tasks');
 
-gulp.task('default', ['build']);
+task('build',
+  series('reset', 'webpack',
+    parallel('useref', 'move-binary-assets'),
+    'set-revisions',
+    parallel('minify:js', 'minify:css'),
+    'clean'
+  )
+);
 
-gulp.task('build', ['reset'], function() {
-  return runSequence('webpack', ['useref', 'move-binary-assets'], 'set-revisions', ['minify:js', 'minify:css'], 'clean');
-});
+task('dev', series('clean', 'webpack-dev'));
 
-gulp.task('dev', ['clean'], function() {
-  return runSequence(['webpack-dev'])
-});
+task('quick-build', series('reset', 'webpack'));
 
-gulp.task('quick-build', function() {
-  return runSequence('reset', 'webpack');
-});
+task('default', series('build'));

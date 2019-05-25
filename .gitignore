@@ -5,7 +5,7 @@ node_modules/
 dist/
 
 # Compiled
-bin/
+temp/
 
 # Logs
 npm-debug.log

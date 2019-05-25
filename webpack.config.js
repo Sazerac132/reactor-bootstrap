@@ -1,13 +1,14 @@
 const webpack = require('webpack');
 
 const path = require('path');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+// const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const webpackConfig = {
   entry: './src/main.js',
   output: {
     filename: 'app.js',
-    path: path.resolve(__dirname, 'bin')
+    path: path.resolve(__dirname, 'temp')
   },
   devtool: 'sourcemap',
   module: {
@@ -23,21 +24,18 @@ const webpackConfig = {
         test: /\.jsx?$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
-        query: {
-          presets: ['es2015', 'react']
+        options: {
+          presets: ['@babel/preset-env']
         }
       },
       {
         test: /\.s?css$/,
         exclude: /node_modules/,
-        loader: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: [
-            'css-loader?modules&sourceMap=true&importLoaders=1',
-            'postcss-loader?sourceMap=inline',
-            'sass-loader'
-          ]
-        })
+        use: [
+          MiniCssExtractPlugin.loader,
+          "css-loader",
+          "sass-loader"
+        ]
       },
       {
         test: /\.(jpg|png|gif|svg)$/,
@@ -50,7 +48,11 @@ const webpackConfig = {
     ]
   },
   plugins: [
-    new ExtractTextPlugin('app.css'),
+    // new ExtractTextPlugin('app.css'),
+    new MiniCssExtractPlugin({
+      filename: 'app.css',
+      chunkFilename: '[name].css'
+    }),
     new webpack.DefinePlugin({
       "process.env": {
         NODE_ENV: JSON.stringify(process.env.NODE_ENV)

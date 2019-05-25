@@ -1,13 +1,13 @@
-const gulp = require('gulp');
+const { task, series, src, dest } = require('gulp');
 
-gulp.task('move-binary-assets', ['font-awesome', 'copy-images']);
-
-gulp.task('font-awesome', function() {
-  return gulp.src('node_modules/font-awesome/fonts/**.*')
-    .pipe(gulp.dest('dist/fonts'));
+task('font-awesome', () => {
+  return src('node_modules/font-awesome/fonts/**.*')
+    .pipe(dest('dist/fonts'));
 });
 
-gulp.task('copy-images', function() {
-  return gulp.src('bin/images/**.*')
-    .pipe(gulp.dest('dist/images'));
+task('copy-images', () => {
+  return src('temp/images/**.*')
+    .pipe(dest('dist/images'));
 });
+
+task('move-binary-assets', series('font-awesome', 'copy-images'));

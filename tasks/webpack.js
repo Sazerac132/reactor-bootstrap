@@ -1,9 +1,9 @@
-const gulp = require('gulp');
+const { task } = require('gulp');
 const webpack = require('webpack');
 const WebpackDevServer = require('webpack-dev-server');
 const gutil = require('gutil');
 
-gulp.task('webpack', function(cb) {
+task('webpack', (done) => {
   process.env.NODE_ENV = 'production';
 
   let config = require('../webpack.config');
@@ -14,11 +14,11 @@ gulp.task('webpack', function(cb) {
     }
 
     gutil.log('[webpack]', stats.toString());
-    cb();
+    done();
   });
 });
 
-gulp.task('webpack-dev', function() {
+task('webpack-dev', () => {
   process.env.NODE_ENV = 'development';
 
   let config = require('../webpack.config');

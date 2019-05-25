@@ -1,19 +1,19 @@
-const gulp = require('gulp');
+const { task } = require('gulp');
 const del = require('del');
 const gutil = require('gutil');
 
-gulp.task('reset', function(cb) {
-  del(['dist', 'bin'])
+task('reset', (done) => {
+  del(['dist', 'temp'])
     .then(function(cleared) {
       gutil.log('[reset] Deleted', '\n - ' + cleared.join('\n - '));
-      cb();
+      done();
     });
 });
 
-gulp.task('clean', function(cb) {
-  del(['dist/js/app.js', 'dist/css/app.css', 'dist/rev-manifest.json', 'bin'])
+task('clean', (done) => {
+  del(['dist/js/app.js', 'dist/css/app.css', 'dist/rev-manifest.json', 'temp'])
     .then(function(cleared) {
       gutil.log('[clean] Deleted', '\n - ' + cleared.join('\n - '));
-      cb();
+      done();
     });
 });

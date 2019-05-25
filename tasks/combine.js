@@ -1,8 +1,8 @@
-const gulp = require('gulp');
+const { task, src, dest } = require('gulp');
 const useref = require('gulp-useref');
 
-gulp.task('useref', function() {
-  return gulp.src('bin/index.html')
+task('useref', () => {
+  return src('temp/index.html')
     .pipe(useref())
-    .pipe(gulp.dest('dist'));
+    .pipe(dest('dist'));
 });

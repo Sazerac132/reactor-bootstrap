@@ -1,7 +1,6 @@
 const webpack = require('webpack');
 
 const path = require('path');
-// const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const webpackConfig = {
@@ -32,7 +31,12 @@ const webpackConfig = {
         test: /\.s?css$/,
         exclude: /node_modules/,
         use: [
-          MiniCssExtractPlugin.loader,
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              publicPath: '../'
+            }
+          },
           "css-loader",
           "sass-loader"
         ]
@@ -44,11 +48,20 @@ const webpackConfig = {
           name: 'images/[hash].[ext]',
           limit: 25000
         }
+      },
+      {
+        test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+        use: [{
+          loader: 'file-loader',
+          options: {
+            name: '[name].[ext]',
+            outputPath: 'fonts/'
+          }
+        }]
       }
     ]
   },
   plugins: [
-    // new ExtractTextPlugin('app.css'),
     new MiniCssExtractPlugin({
       filename: 'app.css',
       chunkFilename: '[name].css'

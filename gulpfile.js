@@ -15,6 +15,6 @@ task('build',
 
 task('dev', series('clean', 'webpack-dev'));
 
-task('quick-build', series('reset', 'webpack'));
+task('quick-build', series('reset', 'webpack', 'move-binary-assets'));
 
 task('default', series('build'));

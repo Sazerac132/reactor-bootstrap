@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import styles from './style.scss';
+import './style.scss';
 
 export default class JokerList extends Component {
   constructor(props) {
@@ -21,7 +21,7 @@ export default class JokerList extends Component {
 
     return (
       <div>
-        <input className={styles.input} value={newTaskName} onChange={this.changeInputValue} />
+        <input className='input' value={newTaskName} onChange={this.changeInputValue} />
         <button onClick={() => addTask(newTaskName)}>New task</button>
         <ul>
           {tasks.length === 0

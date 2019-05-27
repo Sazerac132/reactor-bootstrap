@@ -4,8 +4,9 @@
   "description": "A framework using react.js to quickly get up and running for front-end projects.",
   "main": "index.html",
   "scripts": {
-    "build": "./node_modules/gulp/bin/gulp.js build",
-    "start": "./node_modules/gulp/bin/gulp.js dev",
+    "build": "jest && gulp build",
+    "start": "gulp dev",
+    "lint": "gulp lint",
     "test": "jest"
   },
   "config": {

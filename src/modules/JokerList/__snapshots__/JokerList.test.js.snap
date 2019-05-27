@@ -1,6 +1,32 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders correctly 1`] = `
+exports[`test the render output renders correctly with tasks 1`] = `
+<div>
+  <input
+    className="input"
+    onChange={[Function]}
+    value="Plot evil deeds"
+  />
+  <button
+    onClick={[Function]}
+  >
+    New task
+  </button>
+  <ul>
+    <li>
+      capture batman
+       ...
+      <button
+        onClick={[Function]}
+      >
+        Remove
+      </button>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`test the render output renders correctly without tasks 1`] = `
 <div>
   <input
     className="input"

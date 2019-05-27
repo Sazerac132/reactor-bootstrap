@@ -3,10 +3,25 @@ import renderer from 'react-test-renderer';
 
 import JokerList from './JokerList';
 
-it('renders correctly', () => {
-  const tree = renderer
-    .create(<JokerList />)
-    .toJSON();
+describe('test the render output', () => {
+  it('renders correctly without tasks', () => {
+    const tree = renderer
+      .create(<JokerList />)
+      .toJSON();
 
-  expect(tree).toMatchSnapshot();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('renders correctly with tasks', () => {
+    const tree = renderer
+      .create(<JokerList tasks={[
+        {
+          id: 1,
+          name: 'capture batman'
+        }
+      ]}/>)
+      .toJSON();
+
+    expect(tree).toMatchSnapshot();
+  });
 });

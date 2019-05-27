@@ -1,7 +1,9 @@
-const { expect } = require('chai'); // chai assertion for unit tests
+import chai from 'chai';
 
 import tasks from './tasks';
 import * as actionTypes from '../actions/tasks/actionTypes';
+
+const { expect } = chai;
 
 describe('test', () => {
   let initialState;
@@ -13,22 +15,22 @@ describe('test', () => {
     }, {
       id: 1,
       name: 'bravo'
-    }]
+    }];
   });
 
   it('Correctly adds a task', () => {
-    let action = {
+    const action = {
       type: actionTypes.ADD_TASK,
       payload: 'charlie'
-    }
+    };
 
-    let action2 = {
+    const action2 = {
       type: actionTypes.ADD_TASK,
       payload: 'delta'
-    }
+    };
 
-    let newState1 = tasks(initialState, action);
-    let newState2 = tasks(newState1, action2);
+    const newState1 = tasks(initialState, action);
+    const newState2 = tasks(newState1, action2);
 
     expect(newState1.slice(0, 2)).to.deep.equal(initialState);
     expect(newState1).to.have.lengthOf(3);
@@ -42,18 +44,18 @@ describe('test', () => {
   });
 
   it('Correctly removes a task', () => {
-    let action = {
+    const action = {
       type: actionTypes.REMOVE_TASK,
       payload: 1
-    }
+    };
 
-    let action2 = {
+    const action2 = {
       type: actionTypes.REMOVE_TASK,
       payload: 'cookies'
-    }
+    };
 
-    let newState1 = tasks(initialState, action);
-    let newState2 = tasks(initialState, action2)
+    const newState1 = tasks(initialState, action);
+    const newState2 = tasks(initialState, action2);
 
     expect(newState1).to.have.lengthOf(1);
     expect(newState1).to.deep.equal(initialState.slice(0, 1));

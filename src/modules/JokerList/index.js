@@ -1,7 +1,7 @@
-import JokerList from './JokerList';
-
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+
+import JokerList from './JokerList';
 
 import {
   addTask,

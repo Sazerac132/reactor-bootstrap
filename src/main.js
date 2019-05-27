@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './modules/App';
-
 import { Provider } from 'react-redux';
+
+import App from './modules/App';
 import store from './store';
 
 require('./index.html');

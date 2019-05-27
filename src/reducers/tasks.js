@@ -9,7 +9,7 @@ export default function(state = {}, action) {
 }
 
 function addTask(tasks = [], payload) {
-  const ids = tasks.map(task => task.id)
+  const ids = tasks.map(task => task.id);
   const maxId = Math.max.apply(null, ids);
 
   return [

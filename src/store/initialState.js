@@ -9,4 +9,4 @@ export default {
     id: 2,
     name: 'Pick up dry-cleaning'
   }]
-}
+};

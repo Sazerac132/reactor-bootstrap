@@ -6,9 +6,9 @@ const gutil = require('gutil');
 task('webpack', (done) => {
   process.env.NODE_ENV = 'production';
 
-  let config = require('../webpack.config');
+  const config = require('../webpack.config');
 
-  webpack(config, function(err, stats) {
+  webpack(config, (err, stats) => {
     if (err) {
       throw err;
     }
@@ -21,18 +21,18 @@ task('webpack', (done) => {
 task('webpack-dev', () => {
   process.env.NODE_ENV = 'development';
 
-  let config = require('../webpack.config');
-  let compiler = webpack(config);
+  const config = require('../webpack.config');
+  const compiler = webpack(config);
 
-  let options = {
+  const options = {
     quiet: true
   };
-  let protocol = 'http';
-  let host = 'localhost';
-  let port = process.env.npm_package_config_port || 3001;
+  const protocol = 'http';
+  const host = 'localhost';
+  const port = process.env.npm_package_config_port || 3001;
 
-  let server = new WebpackDevServer(compiler, options)
-    .listen(port, host, function(err) {
+  new WebpackDevServer(compiler, options)
+    .listen(port, host, (err) => {
       if (err) {
         throw err;
       }

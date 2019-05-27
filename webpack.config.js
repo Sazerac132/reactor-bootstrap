@@ -37,8 +37,8 @@ const webpackConfig = {
               publicPath: '../'
             }
           },
-          "css-loader",
-          "sass-loader"
+          'css-loader',
+          'sass-loader'
         ]
       },
       {
@@ -67,7 +67,7 @@ const webpackConfig = {
       chunkFilename: '[name].css'
     }),
     new webpack.DefinePlugin({
-      "process.env": {
+      'process.env': {
         NODE_ENV: JSON.stringify(process.env.NODE_ENV)
       }
     })

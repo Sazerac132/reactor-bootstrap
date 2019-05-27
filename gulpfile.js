@@ -5,7 +5,7 @@ const requireDir = require('require-dir');
 requireDir('tasks');
 
 task('build',
-  series('reset', 'webpack',
+  series('lint', 'reset', 'webpack',
     parallel('useref', 'move-binary-assets'),
     'set-revisions',
     parallel('minify:js', 'minify:css'),

@@ -8,7 +8,7 @@ export default class JokerList extends Component {
 
     this.state = {
       newTaskName: 'Plot evil deeds'
-    }
+    };
 
     this.addTask = this.addTask.bind(this);
     this.changeInputValue = this.changeInputValue.bind(this);
@@ -28,14 +28,16 @@ export default class JokerList extends Component {
             ? <li>No tasks.</li>
             : tasks.map(task => {
               const { name, id } = task;
-              return <li key={id}>
-                {name} ... <button onClick={() => removeTask(id)}>
-                  Remove
-                </button>
-              </li>
+              return (
+                <li key={id}>
+                  {name} ...
+                  <button onClick={() => removeTask(id)}>
+                    Remove
+                  </button>
+                </li>
+              );
             })}
         </ul>
-        
       </div>
     );
   }
@@ -46,7 +48,7 @@ export default class JokerList extends Component {
     const { newTaskName } = this.state;
 
     if (!newTaskName) return;
-    
+
     addTask(newTaskName);
     changeInputValue('');
   }
